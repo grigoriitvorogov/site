@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+# Short links: grigoriitvorogov.com/cv and old /cv.pdf open the current CV
+[[redirects]]
+  from = "/cv"
+  to = "https://cv.grigoriitvorogov.com/CV_Grigorii_Tvorogov.pdf"
+  status = 302
+
+[[redirects]]
+  from = "/cv.pdf"
+  to = "https://cv.grigoriitvorogov.com/CV_Grigorii_Tvorogov.pdf"
+  status = 302
